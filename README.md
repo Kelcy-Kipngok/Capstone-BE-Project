@@ -1,46 +1,88 @@
-# Project setup (commands) — run from your terminal
+# 📚 Library Management System API
 
-# 1. create virtualenv (optional but recommended)
+This project is a **Django + Django REST Framework API** for managing library resources.
+It provides endpoints for managing books, users, and transactions such as borrowing and returning books.
 
-python -m venv .venv
+---
 
-# activate it:
+## 🚀 Features
 
-# Windows:
+* **Books Management (CRUD)**: Add, view, update, and delete books.
+* **Users Management (CRUD)**: Manage library members.
+* **Borrow & Return Books**: Users can check out and return books, with availability automatically updated.
+* **View Available Books**: List all available books with search by title, author, or ISBN.
+* **Authentication**: Basic user authentication with Django’s built-in system.
 
-.venv\Scripts\activate
+---
 
-# macOS / Linux:
+## 🛠️ Tech Stack
 
-source .venv/bin/activate
+* **Backend**: Django, Django REST Framework
+* **Database**: SQLite (default, easy setup)
+* **Deployment**: Heroku / PythonAnywhere (planned)
 
-# 2. install Django and DRF (and token auth)
+---
 
-pip install django djangorestframework djangorestframework-simplejwt
+## 📂 Project Structure
 
-# 3. create project and app
+```
+Library-Management-System-API/
+│
+├── library_api/        # Django project settings
+├── library/            # Main app (models, views, serializers, urls)
+├── manage.py
+├── requirements.txt
+└── README.md
+```
 
-django-admin startproject library_api
-cd library_api
-python manage.py startapp library
+---
 
-# 4. add apps to settings.py INSTALLED_APPS: 'rest_framework', 'rest_framework.authtoken', 'library'
+## ⚙️ Setup Instructions
 
-# 5. run initial migrations
+1. Clone the repository:
 
-python manage.py makemigrations
-python manage.py migrate
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/Library-Management-System-API.git
+   cd Library-Management-System-API
+   ```
 
-# 6. create superuser
+2. Create and activate a virtual environment:
 
-python manage.py createsuperuser
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # Mac/Linux
+   venv\Scripts\activate      # Windows
+   ```
 
-# 7. runserver
+3. Install dependencies:
 
-python manage.py runserver
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-# After files are added (models/serializers/views/urls), run:
+4. Run migrations:
 
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+   ```bash
+   python manage.py migrate
+   ```
+
+5. Start the development server:
+
+   ```bash
+   python manage.py runserver
+   ```
+
+---
+
+## 🔮 Next Steps
+
+* Add JWT authentication for secure access.
+* Implement user roles (Admin, Member).
+* Deploy API online (Heroku/PythonAnywhere).
+
+---
+
+## 👤 Author
+
+Kelcy Kipngok
+Frontend + Backend Developer in training 🚀
